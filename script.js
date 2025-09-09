@@ -63,12 +63,9 @@ const I18N = {
     about_area_desc: "Remote weltweit; vor Ort nach Absprache im Raum Eggenfelden/Rottal-Inn.",
 
     order_h2: "Bestellen",
-    order_cap: "Wähle WhatsApp für die schnellste Rückmeldung – oder sende eine Web-Bestellung per E-Mail.",
-    order_whatsapp_title: "Schnellbestellung via WhatsApp",
-    order_whatsapp_desc: "Öffnet WhatsApp mit einer vorgefüllten Nachricht.",
-    order_whatsapp_btn: "WhatsApp öffnen",
+    order_cap: "Sende eine Web-Bestellung per E-Mail – wir antworten in der Regel am selben Tag.",
     order_web_title: "Web-Bestellung (E-Mail)",
-    order_web_desc: "Dieses Formular öffnet dein E-Mail-Programm und adressiert die Anfrage an <strong>exemple@request.mail</strong>.",
+    order_web_desc: "Dieses Formular öffnet dein E-Mail-Programm und adressiert die Anfrage an <strong>kingtech@gmail.com</strong>.",
     form_name: "Dein Name",
     form_email: "E-Mail",
     form_service: "Leistung",
@@ -89,7 +86,7 @@ const I18N = {
     privacy_h2: "Datenschutzerklärung (Kurzfassung)",
     privacy_p1: "Wir verarbeiten personenbezogene Daten (z. B. Name, E-Mail) ausschließlich zur Beantwortung von Anfragen und Bestellungen (Art. 6 Abs. 1 lit. b und f DSGVO).",
     privacy_p2: "Bei Nutzung von WhatsApp gelten deren Datenschutzbestimmungen. Daten können in Drittländer übertragen werden.",
-    privacy_p3: "Rechte: Auskunft, Berichtigung, Löschung, Einschränkung. Kontakt: exemple@request.mail",
+    privacy_p3: "Rechte: Auskunft, Berichtigung, Löschung, Einschränkung. Kontakt: kingtech@gmail.com",
     privacy_link: "Datenschutz",
   },
   en: {
@@ -117,7 +114,7 @@ const I18N = {
     service_recovery_price: "€30–100 depending on scope · +€20 backup setup",
 
     service_pcfix_title: "PC Repair & Upgrades",
-    service_pcfix_desc: "SSD/RAM swap, cleaning, Windows reinstall/activation (legal), Wi‑Fi optimization, virus removal, data migration, performance check.",
+    service_pcfix_desc: "SSD/RAM swap, cleaning, Windows reinstall/activation (legal), Wi-Fi optimization, virus removal, data migration, performance check.",
     service_pcfix_price: "from €30 (plus parts)",
 
     service_pcbuild_title: "Custom PC (to order)",
@@ -155,12 +152,9 @@ const I18N = {
     about_area_desc: "Remote worldwide; on-site around Eggenfelden/Rottal-Inn.",
 
     order_h2: "Order",
-    order_cap: "Choose WhatsApp for the fastest response — or send a web order via email.",
-    order_whatsapp_title: "Quick order via WhatsApp",
-    order_whatsapp_desc: "Opens WhatsApp with a prefilled message.",
-    order_whatsapp_btn: "Open WhatsApp",
+    order_cap: "Send a web order via email — we usually respond the same day.",
     order_web_title: "Web order (email)",
-    order_web_desc: "This form opens your email app and addresses the request to <strong>exemple@request.mail</strong>.",
+    order_web_desc: "This form opens your email app and addresses the request to <strong>kingtech@gmail.com</strong>.",
     form_name: "Your name",
     form_email: "Email",
     form_service: "Service",
@@ -181,7 +175,7 @@ const I18N = {
     privacy_h2: "Privacy (short)",
     privacy_p1: "We process personal data (e.g. name, email) only to answer inquiries and orders (Art. 6(1)(b,f) GDPR).",
     privacy_p2: "When using WhatsApp, their privacy policy applies. Data may be transferred to third countries.",
-    privacy_p3: "Rights: access, rectification, deletion, restriction. Contact: exemple@request.mail",
+    privacy_p3: "Rights: access, rectification, deletion, restriction. Contact: kingtech@gmail.com",
     privacy_link: "Privacy",
   }
 };
@@ -207,8 +201,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function parseRoute(){
     const hash = location.hash.replace(/^#\//,'');
-    const page = routes.includes(hash) ? (hash || 'home') : 'home';
-    show(page);
+    const [page, query] = hash.split('?');
+    const valid = routes.includes(page) ? (page || 'home') : 'home';
+    show(valid);
+    if (valid === 'order' && query) {
+      const params = new URLSearchParams(query);
+      const svc = params.get('svc');
+      if (svc) {
+        const sel = document.getElementById('orderService');
+        if (sel) sel.value = decodeURIComponent(svc);
+      }
+    }
   }
   window.addEventListener('hashchange', parseRoute);
 
@@ -261,8 +264,19 @@ Leistung: ${svc}
 Nachricht:
 ${f.get('message') || ''}`
     );
-    window.location.href = `mailto:exemple@request.mail?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kingtech@gmail.com?subject=${subject}&body=${body}`;
     return false;
+  };
+
+  // Copy PayPal email
+  window.copyPayPal = function(){
+    const el = document.getElementById('ppEmail');
+    if (!el) return;
+    const txt = el.textContent.trim();
+    navigator.clipboard.writeText(txt).then(()=>{
+      const btn = event?.currentTarget;
+      if (btn){ btn.textContent = "Kopiert!"; setTimeout(()=>btn.textContent="E-Mail kopieren",1500); }
+    });
   };
 
   parseRoute();
