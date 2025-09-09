@@ -5,11 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KingTech — IT Support & Datenrettung</title>
   <meta name="description" content="KingTech — Schnelle, preiswerte IT-Hilfe, Datenrettung, AI-Dokumente & Grafiken. Mehrsprachig (DE/EN)." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="KingTech — IT Support & Datenrettung">
+  <meta property="og:description" content="Schnelle, preiswerte IT-Hilfe, Datenrettung, AI-Dokumente & Grafiken. DE/EN.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Structured Data (ComputerRepair) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComputerRepair",
+    "name": "KingTech",
+    "url": "",
+    "email": "kingtech@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Eggenfelden",
+      "addressCountry": "DE"
+    },
+    "areaServed": "Eggenfelden; Remote worldwide",
+    "openingHours": "By appointment (Mon–Sat); Closed Sundays & German public holidays"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#app" class="sr-only-focusable">Skip to content</a>
+
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand">
@@ -54,50 +82,85 @@
 
         <div class="grid" style="margin-top:14px;">
           <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?it,help" alt="" loading="lazy" decoding="async">
             <span class="pill">Windows • Microsoft 365 • Remote</span>
             <h3 data-i18n="service_it_title">Mikro-IT-Support</h3>
             <p data-i18n="service_it_desc">Outlook/Teams/OneDrive, Drucker & Treiber, Windows-Bereinigung, kleine Fehlerbehebungen u. v. m.</p>
             <div class="price" data-i18n="service_it_price">ab 20 € / Problem · Paket 50 €</div>
-            <div class="actions"><a class="button primary" href="#/order" data-i18n="btn_order">Jetzt bestellen</a></div>
+            <div class="actions">
+              <a class="button" href="#/order?svc=Mikro-IT-Support" data-i18n="btn_order">Jetzt bestellen</a>
+            </div>
           </div>
 
           <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?data,recovery" alt="" loading="lazy" decoding="async">
             <span class="pill">Fotos • Dokumente • USB/HDD</span>
             <h3 data-i18n="service_recovery_title">Datenrettung & Backup</h3>
             <p data-i18n="service_recovery_desc">Wiederherstellung gelöschter Dateien und Einrichtung automatischer Backups, damit es nicht wieder passiert.</p>
             <div class="price" data-i18n="service_recovery_price">30–100 € je nach Umfang · +20 € Backup-Einrichtung</div>
-            <div class="actions"><a class="button primary" href="#/order" data-i18n="btn_order">Jetzt bestellen</a></div>
+            <div class="actions">
+              <a class="button" href="#/order?svc=Datenrettung%20%26%20Backup" data-i18n="btn_order">Jetzt bestellen</a>
+            </div>
           </div>
 
           <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?pc,repair" alt="" loading="lazy" decoding="async">
             <span class="pill">Reparatur • Upgrade • WLAN</span>
             <h3 data-i18n="service_pcfix_title">PC-Reparatur & Upgrades</h3>
             <p data-i18n="service_pcfix_desc">SSD/RAM-Tausch, Reinigung, Windows-Neuinstallation/<strong>Aktivierung (legal)</strong>, <strong>WLAN-Optimierung</strong>, Virenentfernung, <strong>Datenumzug</strong>, Performance-Check.</p>
             <div class="price" data-i18n="service_pcfix_price">ab 30 € (zzgl. Teile)</div>
-            <div class="actions"><a class="button primary" href="#/order" data-i18n="btn_order">Jetzt bestellen</a></div>
+            <div class="actions">
+              <a class="button" href="#/order?svc=PC-Reparatur%20%26%20Upgrades" data-i18n="btn_order">Jetzt bestellen</a>
+            </div>
           </div>
 
           <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?computer,gaming" alt="" loading="lazy" decoding="async">
             <span class="pill">Wunsch-PC • Beratung</span>
             <h3 data-i18n="service_pcbuild_title">Custom PC nach Wunsch</h3>
             <p data-i18n="service_pcbuild_desc">Spezifikationen nach Bedarf (Gaming, Office, Creator), Teileliste, Aufbau, Windows-Setup.</p>
             <div class="price" data-i18n="service_pcbuild_price">Beratung ab 50 € · Aufbau nach Angebot</div>
-            <div class="actions"><a class="button primary" href="#/order" data-i18n="btn_order">Jetzt bestellen</a></div>
+            <div class="actions">
+              <a class="button" href="#/order?svc=Custom%20PC%20nach%20Wunsch" data-i18n="btn_order">Jetzt bestellen</a>
+            </div>
           </div>
 
           <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?design,graphic" alt="" loading="lazy" decoding="async">
             <span class="pill">Lebenslauf • Banner • Social</span>
             <h3 data-i18n="service_ai_title">AI-Erstellungen (Dokumente & Grafiken)</h3>
             <p data-i18n="service_ai_desc">Moderner Lebenslauf, LinkedIn-Refresh, Banner, Produktbilder oder Social-Post-Pakete.</p>
             <div class="price" data-i18n="service_ai_price">20–50 € pro Ergebnis</div>
-            <div class="actions"><a class="button primary" href="#/order" data-i18n="btn_order">Jetzt bestellen</a></div>
+            <div class="actions">
+              <a class="button" href="#/order?svc=AI-Erstellungen%20(Dokumente%20%26%20Grafiken)" data-i18n="btn_order">Jetzt bestellen</a>
+            </div>
           </div>
 
           <div class="card" style="opacity:.8;">
+            <img class="card-img" src="https://source.unsplash.com/600x360/?training,tech" alt="" loading="lazy" decoding="async">
             <span class="pill">Handy • Cloud • Smart-TV</span>
             <h3 data-i18n="service_tutor_title">Tech-Schulung (bald)</h3>
             <p data-i18n="service_tutor_desc">Geduldige 1:1-Sessions für Setup & Online-Sicherheit. Start wird separat angekündigt.</p>
             <div class="price" data-i18n="service_tutor_price">20–40 €/Std (TBD)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section container">
+        <h2>Kundenstimmen</h2>
+        <div class="grid">
+          <div class="card">
+            <p>„Sehr freundlich und kompetent – mein Laptop lief nach kurzer Zeit wieder wie neu. Klare Empfehlung!“</p>
+            <p class="muted">— Anna M., München</p>
+          </div>
+          <div class="card">
+            <p>„Naručio sam posebnu konfiguraciju i sve je radilo savršeno od prvog dana. Brzi dogovor i fer cijena.“</p>
+            <p class="muted">— Marko K., Zagreb</p>
+          </div>
+          <div class="card">
+            <p>„Top Service! Mein PC wurde schnell repariert, und ich habe sogar hilfreiche Tipps für die Zukunft bekommen.“</p>
+            <p class="muted">— Laura S., Eggenfelden</p>
           </div>
         </div>
       </section>
@@ -170,36 +233,40 @@
     <!-- ORDER -->
     <section data-page="order" class="page container section" hidden>
       <h2 data-i18n="order_h2">Bestellen</h2>
-      <p class="cap" data-i18n="order_cap">Wähle WhatsApp für die schnellste Rückmeldung – oder sende eine Web-Bestellung per E-Mail.</p>
+      <p class="cap" data-i18n="order_cap">Sende eine Web-Bestellung per E-Mail – wir antworten in der Regel am selben Tag.</p>
 
       <div class="grid">
         <div class="card">
-          <h3 data-i18n="order_whatsapp_title">Schnellbestellung via WhatsApp</h3>
-          <p data-i18n="order_whatsapp_desc">Öffnet WhatsApp mit einer vorgefüllten Nachricht.</p>
-          <a class="button primary" target="_blank" rel="noopener" data-i18n="order_whatsapp_btn"
-             href="https://wa.me/491701234567?text=Hallo%20KingTech%2C%20ich%20m%C3%B6chte%20einen%20Service%20bestellen.">
-            WhatsApp öffnen
-          </a>
-        </div>
-
-        <div class="card">
           <h3 data-i18n="order_web_title">Web-Bestellung (E-Mail)</h3>
-          <p data-i18n="order_web_desc">Dieses Formular öffnet dein E-Mail-Programm und adressiert die Anfrage an <strong>exemple@request.mail</strong>.</p>
+          <p data-i18n="order_web_desc">Dieses Formular öffnet dein E-Mail-Programm und adressiert die Anfrage an <strong>kingtech@gmail.com</strong>.</p>
           <form id="orderForm" onsubmit="return mailtoSubmit(event)">
             <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
-              <input required name="name" data-i18n-placeholder="form_name" placeholder="Dein Name" />
-              <input required name="email" type="email" data-i18n-placeholder="form_email" placeholder="E-Mail" />
-              <select name="service" required aria-label="Leistung" data-i18n-label="form_service">
+              <label class="vh" for="orderName">Name</label>
+              <input id="orderName" required name="name" data-i18n-placeholder="form_name" placeholder="Dein Name" />
+              <label class="vh" for="orderEmail">E-Mail</label>
+              <input id="orderEmail" required name="email" type="email" data-i18n-placeholder="form_email" placeholder="E-Mail" />
+              <label class="vh" for="orderService">Leistung</label>
+              <select id="orderService" name="service" required aria-label="Leistung" data-i18n-label="form_service">
                 <option value="Mikro-IT-Support" data-i18n="service_it_title">Mikro-IT-Support</option>
                 <option value="Datenrettung & Backup" data-i18n="service_recovery_title">Datenrettung & Backup</option>
                 <option value="PC-Reparatur & Upgrades" data-i18n="service_pcfix_title">PC-Reparatur & Upgrades</option>
                 <option value="Custom PC" data-i18n="service_pcbuild_title">Custom PC nach Wunsch</option>
                 <option value="AI-Erstellungen" data-i18n="service_ai_title">AI-Erstellungen</option>
               </select>
-              <textarea name="message" data-i18n-placeholder="form_message" placeholder="Beschreibe dein Anliegen"></textarea>
+              <label class="vh" for="orderMessage">Nachricht</label>
+              <textarea id="orderMessage" name="message" data-i18n-placeholder="form_message" placeholder="Beschreibe dein Anliegen"></textarea>
               <button class="button primary" type="submit" data-i18n="form_send">Senden</button>
             </div>
           </form>
+        </div>
+
+        <div class="card">
+          <h3>Zahlung</h3>
+          <p>Bar oder PayPal. Rechnung bei Barzahlung über <strong>Zervant</strong>. Weitere Optionen folgen.</p>
+          <div class="grid" style="grid-template-columns: 1fr auto; align-items:center;">
+            <p style="margin:0;">PayPal-E-Mail: <code id="ppEmail">vkralj1997@gmail.com</code></p>
+            <button class="button" onclick="copyPayPal()">E-Mail kopieren</button>
+          </div>
         </div>
       </div>
     </section>
@@ -210,8 +277,7 @@
       <div class="contact">
         <div class="card">
           <h3 style="margin-top:0;" data-i18n="direct">Direkt</h3>
-          <p>E-Mail: <a href="mailto:exemple@request.mail">exemple@request.mail</a></p>
-          <p>WhatsApp: <a href="https://wa.me/491701234567" target="_blank" rel="noopener">+49 170 1234567</a></p>
+          <p>E-Mail: <a href="mailto:kingtech@gmail.com">kingtech@gmail.com</a></p>
           <p data-i18n="location">Standort: Eggenfelden, DE · Remote weltweit</p>
         </div>
 
@@ -219,23 +285,27 @@
           <h3 style="margin-top:0;" data-i18n="faq">FAQ</h3>
           <details><summary data-i18n="q_nofee">Kein Erfolg – keine Gebühr?</summary><div data-i18n="a_nofee">Bei Datenrettung möglich. Beim IT-Support zahlst du nur, wenn das Problem gelöst ist oder du zufrieden bist.</div></details>
           <details><summary data-i18n="q_onsite">Vor-Ort-Termine?</summary><div data-i18n="a_onsite">Im Landkreis Rottal-Inn nach Absprache. Anfahrtspauschale möglich.</div></details>
-          <details><summary data-i18n="q_pay">Zahlungsarten?</summary><div data-i18n="a_pay">Bar oder PayPal. Rechnung bei Barzahlung über Zervant. Weitere Optionen folgen.</div></details>
+          <details><summary data-i18n="q_pay">Zahlungsarten?</summary><div>Bar oder PayPal (an <code>vkralj1997@gmail.com</code>). Rechnung bei Barzahlung über <strong>Zervant</strong>. Weitere Optionen folgen.</div></details>
         </div>
 
         <div class="card">
           <h3 data-i18n="quick_title">Schnell-Anfrage (E-Mail-Fallback)</h3>
           <form id="quickForm" onsubmit="return mailtoSubmit(event)">
             <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
-              <input required name="name" data-i18n-placeholder="form_name" placeholder="Dein Name" />
-              <input required name="email" type="email" data-i18n-placeholder="form_email" placeholder="E-Mail" />
-              <select name="service" required aria-label="Leistung" data-i18n-label="form_service">
+              <label class="vh" for="qName">Name</label>
+              <input id="qName" required name="name" data-i18n-placeholder="form_name" placeholder="Dein Name" />
+              <label class="vh" for="qEmail">E-Mail</label>
+              <input id="qEmail" required name="email" type="email" data-i18n-placeholder="form_email" placeholder="E-Mail" />
+              <label class="vh" for="qService">Leistung</label>
+              <select id="qService" name="service" required aria-label="Leistung" data-i18n-label="form_service">
                 <option value="Mikro-IT-Support" data-i18n="service_it_title">Mikro-IT-Support</option>
                 <option value="Datenrettung & Backup" data-i18n="service_recovery_title">Datenrettung & Backup</option>
                 <option value="PC-Reparatur & Upgrades" data-i18n="service_pcfix_title">PC-Reparatur & Upgrades</option>
                 <option value="Custom PC" data-i18n="service_pcbuild_title">Custom PC nach Wunsch</option>
                 <option value="AI-Erstellungen" data-i18n="service_ai_title">AI-Erstellungen</option>
               </select>
-              <textarea name="message" data-i18n-placeholder="form_message" placeholder="Beschreibe dein Anliegen"></textarea>
+              <label class="vh" for="qMsg">Nachricht</label>
+              <textarea id="qMsg" name="message" data-i18n-placeholder="form_message" placeholder="Beschreibe dein Anliegen"></textarea>
               <button class="button primary" type="submit" data-i18n="form_send">Senden</button>
             </div>
           </form>
@@ -248,10 +318,9 @@
       <h2>Impressum</h2>
       <div class="card">
         <p><strong>Angaben gemäß § 5 TMG</strong></p>
-        <p>KingTech (Einzelunternehmen)<br> Mustername, Musterstraße 1<br> 84307 Eggenfelden, Deutschland</p>
-        <p>E-Mail: exemple@request.mail · Telefon: +49 170 1234567</p>
-        <p>USt-IdNr.: DE-XXXXXXX (falls vorhanden)</p>
-        <p>Verantwortlich für den Inhalt: Mustername</p>
+        <p>KingTech (Einzelunternehmen)<br> Verantwortlich: Viliam Kralj<br> Eggenfelden, Deutschland</p>
+        <p>E-Mail: kingtech@gmail.com</p>
+        <p>USt-IdNr.: wird nachgereicht</p>
       </div>
     </section>
 
@@ -261,7 +330,7 @@
       <div class="card">
         <p data-i18n="privacy_p1">Wir verarbeiten personenbezogene Daten (z. B. Name, E-Mail) ausschließlich zur Beantwortung von Anfragen und Bestellungen (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
         <p data-i18n="privacy_p2">Bei Nutzung von WhatsApp gelten deren Datenschutzbestimmungen. Daten können in Drittländer übertragen werden.</p>
-        <p data-i18n="privacy_p3">Rechte: Auskunft, Berichtigung, Löschung, Einschränkung. Kontakt: exemple@request.mail</p>
+        <p data-i18n="privacy_p3">Rechte: Auskunft, Berichtigung, Löschung, Einschränkung. Kontakt: kingtech@gmail.com</p>
       </div>
     </section>
 
@@ -274,9 +343,9 @@
         <p><strong>2. Leistungen</strong><br>
         Art und Umfang ergeben sich aus dem jeweiligen Angebot bzw. der Auftragsbestätigung. Teilleistungen sind zulässig.</p>
         <p><strong>3. Vertragsschluss</strong><br>
-        Der Vertrag kommt durch Bestätigung (schriftlich, per E-Mail, WhatsApp oder Web-Formular) zustande.</p>
+        Der Vertrag kommt durch Bestätigung (schriftlich, per E-Mail oder Web-Formular) zustande.</p>
         <p><strong>4. Vergütung & Zahlung</strong><br>
-        Es gelten die auf der Website genannten Festpreise/Spannen oder ein individuelles Angebot. Zahlbar sofort nach Leistungserbringung per Barzahlung, Überweisung oder PayPal; es erfolgt eine Rechnung.</p>
+        Es gelten die auf der Website genannten Festpreise/Spannen oder ein individuelles Angebot. Zahlbar sofort nach Leistungserbringung per Barzahlung oder PayPal; bei Barzahlung erfolgt eine Rechnung über Zervant.</p>
         <p><strong>5. Besonderheiten Datenrettung</strong><br>
         Bei vereinbartem „Kein Erfolg – keine Gebühr“ fällt keine Vergütung an, wenn keine wiederherstellbaren Daten gefunden werden. Für bereits angefallene Diagnose-/Materialkosten kann eine Pauschale berechnet werden.</p>
         <p><strong>6. Mitwirkungspflichten</strong><br>
@@ -308,7 +377,6 @@
     </p>
   </footer>
 
-  <!-- Removed floating WhatsApp button -->
   <script src="script.js" defer></script>
 </body>
 </html>
