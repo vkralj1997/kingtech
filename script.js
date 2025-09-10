@@ -25,7 +25,7 @@ const I18N = {
     service_recovery_price: "30–100 € je nach Umfang · +20 € Backup-Einrichtung",
 
     service_pcfix_title: "PC-Reparatur & Upgrades",
-    service_pcfix_desc: "SSD/RAM-Tausch, Reinigung, Windows-Neuinstallation/Aktivierung (legal), WLAN-Optimierung, Virenentfernung, Datenumzug, Performance-Check.",
+    service_pcfix_desc: "SSD/RAM-Tausch, Reinigung, Windows-Neuinstallation/Aktivierung, WLAN-Optimierung, Virenentfernung, Datenumzug, Performance-Check.",
     service_pcfix_price: "ab 30 € (zzgl. Teile)",
 
     service_pcbuild_title: "Custom PC nach Wunsch",
@@ -114,7 +114,7 @@ const I18N = {
     service_recovery_price: "€30–100 depending on scope · +€20 backup setup",
 
     service_pcfix_title: "PC Repair & Upgrades",
-    service_pcfix_desc: "SSD/RAM swap, cleaning, Windows reinstall/activation (legal), Wi-Fi optimization, virus removal, data migration, performance check.",
+    service_pcfix_desc: "SSD/RAM swap, cleaning, Windows reinstall/activation, Wi‑Fi optimization, virus removal, data migration, performance check.",
     service_pcfix_price: "from €30 (plus parts)",
 
     service_pcbuild_title: "Custom PC (to order)",
@@ -181,11 +181,9 @@ const I18N = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Year
   const yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // Router
   const routes = ['','services','pricing','about','order','contact','impressum','privacy','agb'];
   function show(page) {
     document.querySelectorAll('.page').forEach(sec => sec.hidden = true);
@@ -215,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('hashchange', parseRoute);
 
-  // Language switching (DE/EN only). If old 'hr' was saved, default to 'de'.
   const langSel = document.getElementById('lang');
   const savedLang = localStorage.getItem('kingtech_lang');
   const initialLang = (savedLang === 'en') ? 'en' : 'de';
@@ -246,12 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
   langSel.addEventListener('change', () => applyI18n(langSel.value));
   applyI18n(initialLang);
 
-  // Duplicate services to Services page
   const servicesGrid = document.getElementById('servicesGrid');
   const services = document.querySelector('#services .grid');
   if (servicesGrid && services){ servicesGrid.innerHTML = services.innerHTML; }
 
-  // Mailto
   window.mailtoSubmit = function (e) {
     e.preventDefault();
     const f = new FormData(e.target);
@@ -268,7 +263,6 @@ ${f.get('message') || ''}`
     return false;
   };
 
-  // Copy PayPal email
   window.copyPayPal = function(){
     const el = document.getElementById('ppEmail');
     if (!el) return;
